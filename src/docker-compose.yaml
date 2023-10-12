@@ -1,0 +1,17 @@
+version: '3.3'
+services:
+  STD:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: 'amin2005'
+    ports:
+      - '6633:3306'
+    volumes:
+      - my-db:/var/lib/mysql
+  adminer:
+    image: dockette/adminer:full-php5
+    ports:
+      - '8552:8080'
+
+volumes:
+  my-db:
